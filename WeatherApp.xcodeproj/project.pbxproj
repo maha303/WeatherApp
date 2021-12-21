@@ -16,6 +16,7 @@
 		291919162772035000892C3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 291919142772035000892C3D /* LaunchScreen.storyboard */; };
 		2919191E2772036400892C3D /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2919191D2772036400892C3D /* Weather.swift */; };
 		291919222772492700892C3D /* cc0a5452c240882975a17812798a75d6.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 291919212772492700892C3D /* cc0a5452c240882975a17812798a75d6.jpeg */; };
+		2919192427727E1C00892C3D /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2919192327727E1B00892C3D /* CustomCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		291919172772035000892C3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2919191D2772036400892C3D /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		291919212772492700892C3D /* cc0a5452c240882975a17812798a75d6.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cc0a5452c240882975a17812798a75d6.jpeg; path = ../../../../Downloads/cc0a5452c240882975a17812798a75d6.jpeg; sourceTree = "<group>"; };
+		2919192327727E1B00892C3D /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				291919082772034E00892C3D /* SceneDelegate.swift */,
 				2919191D2772036400892C3D /* Weather.swift */,
 				2919190A2772034E00892C3D /* ViewController.swift */,
+				2919192327727E1B00892C3D /* CustomCollectionViewCell.swift */,
 				2919190C2772034E00892C3D /* Main.storyboard */,
 				291919122772035000892C3D /* Assets.xcassets */,
 				291919142772035000892C3D /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				291919112772034E00892C3D /* WeatherApp.xcdatamodeld in Sources */,
+				2919192427727E1C00892C3D /* CustomCollectionViewCell.swift in Sources */,
 				2919190B2772034E00892C3D /* ViewController.swift in Sources */,
 				291919072772034E00892C3D /* AppDelegate.swift in Sources */,
 				291919092772034E00892C3D /* SceneDelegate.swift in Sources */,

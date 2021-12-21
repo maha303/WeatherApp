@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -77,6 +78,50 @@
                                 <nil key="textColor"/>
                                 <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AaY-qa-m5G">
+                                <rect key="frame" x="20" y="612" width="374" height="250"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="Ny6-Cb-Pcc"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CFv-HV-rTV">
+                                    <size key="itemSize" width="128" height="250"/>
+                                    <size key="estimatedItemSize" width="128" height="250"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="mU1-U1-5wi" customClass="CustomCollectionViewCell" customModule="WeatherApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="250"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rQW-2h-jce">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="250"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMd-u2-hoh">
+                                                    <rect key="frame" x="8" y="2" width="112" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="112" id="8OG-Qa-F41"/>
+                                                        <constraint firstAttribute="height" constant="21" id="BuZ-Av-0CO"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZMd-u2-hoh" firstAttribute="top" secondItem="rQW-2h-jce" secondAttribute="top" constant="2" id="N5q-rR-0Uy"/>
+                                                <constraint firstItem="ZMd-u2-hoh" firstAttribute="centerX" secondItem="rQW-2h-jce" secondAttribute="centerX" id="NeX-Sr-0dh"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="128" height="250"/>
+                                        <connections>
+                                            <outlet property="daylabel" destination="ZMd-u2-hoh" id="RZU-oC-p0V"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -95,19 +140,24 @@
                             <constraint firstItem="7cb-nH-Qic" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="131" id="V5I-k9-FgX"/>
                             <constraint firstItem="zhA-Fq-FtD" firstAttribute="top" secondItem="UOS-JX-fUt" secondAttribute="bottom" constant="2" id="XNl-7U-A0C"/>
                             <constraint firstItem="UOS-JX-fUt" firstAttribute="leading" secondItem="b8T-P6-w0l" secondAttribute="trailing" constant="8" id="a18-F8-f0Z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AaY-qa-m5G" secondAttribute="trailing" constant="20" id="cAu-CV-Uk6"/>
                             <constraint firstItem="b8T-P6-w0l" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="72" id="chv-VI-tHo"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t5w-DP-CvS" secondAttribute="trailing" constant="220" id="cxS-rO-RgB"/>
+                            <constraint firstItem="AaY-qa-m5G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dzU-IM-qfg"/>
                             <constraint firstItem="fhg-Tg-5C1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="iwS-cD-Fcb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zhA-Fq-FtD" secondAttribute="trailing" constant="70" id="jD5-3c-noG"/>
                             <constraint firstItem="zhA-Fq-FtD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="m9i-1C-SmY"/>
                             <constraint firstItem="fhg-Tg-5C1" firstAttribute="top" secondItem="zmM-AU-vYE" secondAttribute="bottom" constant="5" id="nWV-s6-V6A"/>
+                            <constraint firstItem="AaY-qa-m5G" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="o31-PP-sAY"/>
                             <constraint firstItem="zmM-AU-vYE" firstAttribute="top" secondItem="zhA-Fq-FtD" secondAttribute="bottom" constant="1" id="ooc-dh-V24"/>
                             <constraint firstItem="zmM-AU-vYE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="pui-0z-hgD"/>
                             <constraint firstItem="b8T-P6-w0l" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="72" id="qQC-4k-hHW"/>
+                            <constraint firstItem="AaY-qa-m5G" firstAttribute="top" secondItem="t5w-DP-CvS" secondAttribute="bottom" constant="8" symbolic="YES" id="wQ6-ZB-xHW"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cityname" destination="b8T-P6-w0l" id="AXg-bu-vYX"/>
+                        <outlet property="collectionView" destination="AaY-qa-m5G" id="IS0-Lc-xhJ"/>
                         <outlet property="details" destination="t5w-DP-CvS" id="n4X-h6-gHF"/>
                         <outlet property="image" destination="UOS-JX-fUt" id="xS7-Fe-ulL"/>
                         <outlet property="main" destination="zmM-AU-vYE" id="CMM-OS-dfH"/>
@@ -125,6 +175,9 @@
         <image name="cc0a5452c240882975a17812798a75d6.jpeg" width="597" height="704"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    let days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+    
     @IBOutlet weak var cityname: UILabel!
     
     @IBOutlet weak var main: UILabel!
@@ -16,6 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var details: UILabel!
     @IBOutlet weak var temp: UILabel!
     @IBOutlet weak var mainTemp: UILabel!
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     @IBOutlet weak var weatherDis: UILabel!
     
@@ -25,6 +29,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.dataSource = self
 
     let url = URL(string:"http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=8e81f249a02ae4001c9cf723c597e65a")
         let session = URLSession.shared
@@ -56,6 +62,8 @@ class ViewController: UIViewController {
 
                 DispatchQueue.main.async {
                     
+                    self.collectionView.reloadData()
+                    
                     self.cityname.text = "\(self.weatherInfo?.name ?? "" ) " + "\(self.weatherInfo?.sys.country ?? "" ) Weather "
                     self.main.text = "\(more[0].weatherDescription)"
 
@@ -76,4 +84,19 @@ class ViewController: UIViewController {
 
     }
 }
+extension ViewController : UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return days.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCollectionViewCell
+        cell.backgroundColor = .blue
+        cell.daylabel.text = days[indexPath.item]
+        return cell
+    }
+    
+    
+}
+
 
