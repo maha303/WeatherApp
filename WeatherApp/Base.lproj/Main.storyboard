@@ -106,17 +106,30 @@
                                                         <constraint firstAttribute="height" constant="21" id="BuZ-Av-0CO"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="textColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sa-PZ-SvE">
+                                                    <rect key="frame" x="8" y="63.5" width="112" height="123"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="123" id="JBp-Sq-u8H"/>
+                                                        <constraint firstAttribute="width" constant="112" id="epD-wi-u9k"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ZMd-u2-hoh" firstAttribute="top" secondItem="rQW-2h-jce" secondAttribute="top" constant="2" id="N5q-rR-0Uy"/>
                                                 <constraint firstItem="ZMd-u2-hoh" firstAttribute="centerX" secondItem="rQW-2h-jce" secondAttribute="centerX" id="NeX-Sr-0dh"/>
+                                                <constraint firstItem="0sa-PZ-SvE" firstAttribute="centerY" secondItem="rQW-2h-jce" secondAttribute="centerY" id="rgE-vH-Qa6"/>
+                                                <constraint firstItem="0sa-PZ-SvE" firstAttribute="centerX" secondItem="rQW-2h-jce" secondAttribute="centerX" id="syG-pl-GeA"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="128" height="250"/>
                                         <connections>
+                                            <outlet property="dayTemp" destination="0sa-PZ-SvE" id="T5r-rY-nVA"/>
                                             <outlet property="daylabel" destination="ZMd-u2-hoh" id="RZU-oC-p0V"/>
                                         </connections>
                                     </collectionViewCell>

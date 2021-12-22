@@ -10,4 +10,6 @@ import UIKit
 class CustomCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var daylabel: UILabel!
+    
+    @IBOutlet weak var dayTemp: UILabel!
 }

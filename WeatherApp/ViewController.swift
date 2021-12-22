@@ -10,7 +10,9 @@ import UIKit
 class ViewController: UIViewController {
     
     let days = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+   
     
+ 
     @IBOutlet weak var cityname: UILabel!
     
     @IBOutlet weak var main: UILabel!
@@ -55,11 +57,9 @@ class ViewController: UIViewController {
                 
                 let welcome = try JSONDecoder().decode(Welcome.self, from: myData)
                  self.weatherInfo = welcome
-                
+       
                 let more = welcome.weather
                 
-                print(more[0].weatherDescription)
-
                 DispatchQueue.main.async {
                     
                     self.collectionView.reloadData()
@@ -81,22 +81,20 @@ class ViewController: UIViewController {
         })
        
         task.resume()
-
     }
 }
 extension ViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return days.count
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCollectionViewCell
         cell.backgroundColor = .blue
         cell.daylabel.text = days[indexPath.item]
+        cell.dayTemp.text = "\(Int(self.weatherInfo?.main.tempMax ?? 0.0 )) k\nmax: \(Int(self.weatherInfo?.main.tempMax ?? 0.0 )) k\nmin: \(Int(self.weatherInfo?.main.tempMin ?? 0.0 )) k"
+        
         return cell
     }
-    
-    
 }
 
 
